@@ -1,3 +1,5 @@
+process.env.NODE_ENV="development"
+
 require('mahrio').runServer(process.env, __dirname)
     .then( function(server) {
 
@@ -23,15 +25,5 @@ require('mahrio').runServer(process.env, __dirname)
               }
             }
         });
-
-        server.route({
-          path: "/socket.io/{param*}",
-          method: 'GET',
-          handler: {
-            directory: {
-              path: ["../node_modules/socket.io/"]
-            }
-          }
-        })
 
     });
