@@ -1,0 +1,8 @@
+{
+  "name": "MAHRIO-socketio",
+  "version": "0.0.1",
+  "dependencies": {
+    "mahrio": "latest",
+    "socket.io": "^1.7.3"
+  }
+}

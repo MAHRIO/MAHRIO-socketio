@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>MAHRIO-socketio</title>
+</head>
+<body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io("http://localhost:6085");
+    socket.on("event:hello", function(data){
+      console.log(data);
+      socket.emit("client:itsame", { my: "data"});
+    });
+  </script>
+</body>
+</html>
