@@ -7,7 +7,7 @@ require('mahrio').runServer(process.env, __dirname)
 
       io.on('connection', function( socket ){
           console.log('socket listening...' + socket.id);
-          socket.emit( 'event:hello' );
+          socket.emit( 'event:hello' , {my : "server_data"});
           socket.on('client:itsame', function(val){
             console.log(val)
           });
