@@ -2,14 +2,21 @@
 <head>
   <title>MAHRIO-socketio</title>
 </head>
-<body>
+<body onload="init();">
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    let socket = io("http://127.0.0.1:6085");
-    socket.on("event:hello", function(data){
-      console.log(data);
-      socket.emit("client:itsame", { my: "data"});
-    });
+    function init() {
+      let socket = io("http://127.0.0.1:6085");
+
+      socket.on("event:new-data", function(data){
+        console.log(data);
+        socket.emit("client:itsame", { my: "data"});
+
+        var prior_data = document.getElementById("socket-data");
+        prior_data.innerHTML = ".in yer portz."
+      });
+    }
   </script>
+  <div id="socket-data"></div>
 </body>
 </html>
