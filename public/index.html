@@ -13,7 +13,8 @@
         socket.emit("client:itsame", { my: "data"});
 
         var prior_data = document.getElementById("socket-data");
-        prior_data.innerHTML = ".in yer portz."
+
+        prior_data.innerHTML = prior_data.innerHTML + "<br>" + JSON.stringify(data);
       });
     }
   </script>
